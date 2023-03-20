@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-bar">
+    <a href="">Sign In</a>
+</div>
+
+<div id="main">
+<div id="info-block">
+    <h1>Welcome to Simple Calculator!</h1>
+    <h4>Developed by Andrlis</h4>
+    <p>Calculator supports four types of operations with two operands:</p>
+    <ul class="my-ul">
+        <li>summation</li>
+        <li>subtraction</li>
+        <li>multiplication</li>
+        <li>division</li>
+    </ul>
+    <p>Authorized users also able to manage the history of executed operations.</p>
+</div>
+<div class="calc-block">
+    <div class="calc-container">
+        <form action="calc" method="post">
+            <label for="operand1">Operand 1:</label>
+            <input class="calc" type="text" id="operand1" name="operand1" placeholder="Operand #1">
+            <label for="operand2">Operand 2:</label>
+            <input class="calc" type="text" id="operand2" name="operand2" placeholder="Operand #2">
+            <label for="operation-type">Operation:</label>
+            <select class="calc" id="operation-type" name="operation-type">
+                <option value="default" disabled selected>Select operation</option>
+                <option value="SUM">SUM</option>
+                <option value="SUB">DIV</option>
+                <option value="MUL">MUL</option>
+                <option value="DIV">DIV</option>
+            </select>
+            <button id="calc-button">Calculate</button>
+        </form>
+    </div>
+    <label for="calc-result">Result:</label>
+    <input class="calc" id="calc-result" name="calc-result">
+</div>
+</div>
+</body>
+</html>
