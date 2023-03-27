@@ -16,6 +16,11 @@ import java.io.IOException;
 @WebServlet("/calc")
 public class CalculatorServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("pages/home.jsp").forward(req,resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         double operand1 = Double.parseDouble(req.getParameter("operand1"));
@@ -24,9 +29,9 @@ public class CalculatorServlet extends HttpServlet {
 
         CalculatorService calculatorService = new CalculatorService();
         Operation operation = calculatorService.calculate(new Operation(operand1, operand2, type));
-        System.out.println(operation.getResult());
-        req.setAttribute("calc-result", operation.getResult());
-        req.getRequestDispatcher("home.html").forward(req, resp);
+
+        req.setAttribute("result", operation.getResult());
+        req.getRequestDispatcher("pages/home.jsp").forward(req, resp);
 
     }
 }
